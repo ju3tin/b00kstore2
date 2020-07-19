@@ -1,0 +1,85 @@
+{% extends 'base1final1a.html' %} 
+{% block content %}
+
+
+<!-- Main Content -->   
+
+<!--    
+  <section class="slides top-club">
+       <img class="browse_img responsive-img" src="https://media.edutopia.org/styles/responsive_2880px_16x9/s3/masters/2018-08/iStock-487922329_master.jpg" alt="browse page image" style="width:1280px;height:350px;" />
+  </section>
+  -->
+  
+  
+  
+  
+   <!-- Messages -->
+      <!-- Flash Messages -->
+  <div id="alerts" class="container messages">
+      <div class="row justify-content-around">
+          <div id="messages">
+              
+              
+              
+          </div>
+      </div>
+  </div>
+  <!-- End Flash Messages -->
+      <!-- End Messages -->
+   
+          
+  <div class=" meetings top">
+    <div class="modal-content">
+      <h4>Add a New Meeting</h4>
+      
+          <hr><br>  
+          <!-- Give your meeting a name-->
+          <div class="row">
+              <form class="col s12" action="/insert_meeting" method="POST">
+                  <div class="row">
+                      <div class="input-field col s12">
+                          <input placeholder="Placeholder" id="meeting_name" name="meeting_name" type="text" class="validate">
+                          <label for="meeting_name" class="active">Meeting Name</label>
+                      </div>                    
+
+                      <!-- Add a date from date picker -->
+                   
+                      <div class="input-field col s6">
+                      <div class="modal datepicker-modal" id="modal-47e62580-be36-db45-ea66-b78182c8f739" tabindex="0"><div class="modal-content datepicker-container"><div class="datepicker-date-display"><span class="year-text"></span><span class="date-text"></span></div><div class="datepicker-calendar-container"><div class="datepicker-calendar"></div><div class="datepicker-footer"><button class="btn-flat datepicker-clear waves-effect" style="visibility: hidden;" type="button"></button><div class="confirmation-btns"><button class="btn-flat datepicker-cancel waves-effect" type="button">Cancel</button><button class="btn-flat datepicker-done waves-effect" type="button">Ok</button></div></div></div></div></div><input type="text" class="datepicker" id="meeting_date" name="meeting_date" placeholder="Click to select date"> Add a date
+                      </div>
+
+                      <!-- Add a time from time picker -->
+                      <div class="input-field col s6">
+                      <div class="modal timepicker-modal" id="modal-ef46b253-5713-1007-32b1-0ff4a3e7ba6a" tabindex="0"><div class="modal-content timepicker-container"><div class="timepicker-digital-display"><div class="timepicker-text-container"><div class="timepicker-display-column"><span class="timepicker-span-hours text-primary"></span>:<span class="timepicker-span-minutes"></span></div><div class="timepicker-display-column timepicker-display-am-pm"><div class="timepicker-span-am-pm"><div class="am-btn">AM</div><div class="pm-btn">PM</div></div></div></div></div><div class="timepicker-analog-display"><div class="timepicker-plate"><div class="timepicker-canvas"><svg class="timepicker-svg" width="270" height="270"><g transform="translate(135,135)"><line x1="0" y1="0"></line><circle class="timepicker-canvas-bg" r="20"></circle><circle class="timepicker-canvas-bearing" cx="0" cy="0" r="4"></circle></g></svg></div><div class="timepicker-dial timepicker-hours"><div class="timepicker-tick" style="left: 167.5px; top: 24.0673px;">1</div><div class="timepicker-tick" style="left: 205.933px; top: 62.5px;">2</div><div class="timepicker-tick" style="left: 220px; top: 115px;">3</div><div class="timepicker-tick" style="left: 205.933px; top: 167.5px;">4</div><div class="timepicker-tick" style="left: 167.5px; top: 205.933px;">5</div><div class="timepicker-tick" style="left: 115px; top: 220px;">6</div><div class="timepicker-tick" style="left: 62.5px; top: 205.933px;">7</div><div class="timepicker-tick" style="left: 24.0673px; top: 167.5px;">8</div><div class="timepicker-tick" style="left: 10px; top: 115px;">9</div><div class="timepicker-tick" style="left: 24.0673px; top: 62.5px;">10</div><div class="timepicker-tick" style="left: 62.5px; top: 24.0673px;">11</div><div class="timepicker-tick" style="left: 115px; top: 10px;">12</div></div><div class="timepicker-dial timepicker-minutes timepicker-dial-out"><div class="timepicker-tick" style="left: 115px; top: 10px;">00</div><div class="timepicker-tick" style="left: 167.5px; top: 24.0673px;">05</div><div class="timepicker-tick" style="left: 205.933px; top: 62.5px;">10</div><div class="timepicker-tick" style="left: 220px; top: 115px;">15</div><div class="timepicker-tick" style="left: 205.933px; top: 167.5px;">20</div><div class="timepicker-tick" style="left: 167.5px; top: 205.933px;">25</div><div class="timepicker-tick" style="left: 115px; top: 220px;">30</div><div class="timepicker-tick" style="left: 62.5px; top: 205.933px;">35</div><div class="timepicker-tick" style="left: 24.0673px; top: 167.5px;">40</div><div class="timepicker-tick" style="left: 10px; top: 115px;">45</div><div class="timepicker-tick" style="left: 24.0673px; top: 62.5px;">50</div><div class="timepicker-tick" style="left: 62.5px; top: 24.0673px;">55</div></div></div><div class="timepicker-footer"><button class="btn-flat timepicker-clear waves-effect" style="visibility: hidden;" type="button" tabindex="3">Clear</button><div class="confirmation-btns"><button class="btn-flat timepicker-close waves-effect" type="button" tabindex="3">Cancel</button><button class="btn-flat timepicker-close waves-effect" type="button" tabindex="3">Ok</button></div></div></div></div></div><input type="text" class="timepicker" id="meeting_time" name="meeting_time" placeholder="Click to select time"> Add a time 
+                      </div>
+                    
+                      <!-- Add comments about your meeting -->
+                      <div class="input-field col s12 top">
+                          <input id="meeting_description" name="meeting_description" type="text" minlength="1" maxlength="500" placeholder="Provide Meeting Context" class="form-control" required="">
+                          <label for="meeting_description" class="active">
+                          Meeting Description
+                          <i class="far fa-question-circle tooltipped" data-position="right" data-tooltip="1-500 characters" aria-hidden="true"></i>
+                          </label>
+                      </div>
+                  </div>
+                  <!-- Submit your new meeting-->
+                  <div class="col s6">
+                      <button class="btn waves-effect waves-light btn-spc left-spc login-btn" type="submit">Add Meeting
+                      <i class="material-icons right">send</i>
+                      </button>
+                  </div>
+              </form>
+          </div>
+              
+      </div>
+  </div>
+  
+  
+  
+  
+  
+    
+      <!-- End Main Content --> 
+
+      {% endblock %}
+  

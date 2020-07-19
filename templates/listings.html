@@ -1,0 +1,311 @@
+ {% extends 'base.html' %} 
+{% block content %}
+<!--<div id="myData"></div>
+    <script>
+        fetch('browseone')
+            .then(function (response) {
+                return response.json();
+            })
+            .then(function (data) {
+                appendData(data);
+            })
+            .catch(function (err) {
+                console.log('error: ' + err);
+            });
+        function appendData(data) {
+            var mainContainer = document.getElementById("myData");
+            for (var i = 0; i < data.length; i++) {
+                var div = document.createElement("div");
+                div.innerHTML = 'Name: ' + data[i].title + ' ' + data[i].isbn;
+                mainContainer.appendChild(div);
+            }
+        }
+    </script>
+-->
+
+
+ <div id="listingTable"></div>
+<a href="javascript:prevPage()" id="btn_prev">Prev</a>
+<a href="javascript:nextPage()" id="btn_next">Next</a>
+page: <span id="page"></span>
+
+    <script type="text/javascript">//<![CDATA[
+
+
+var current_page = 1;
+var records_per_page = 3;
+{% for output in output %}
+{{ output }} 
+{% endfor %}
+
+json.dump(data, f, indent=2)
+
+
+
+var objJson1 = [
+    { adName: "AdName 1"},
+    { adName: "AdName 2"},
+    { adName: "AdName 3"},
+    { adName: "AdName 4"},
+    { adName: "AdName 5"},
+    { adName: "AdName 6"},
+    { adName: "AdName 7"},
+    { adName: "AdName 8"},
+    { adName: "AdName 9"},
+    { adName: "AdName 10"}
+]; // Can be obtained from another source, such as your objJson variable
+
+function prevPage()
+{
+    if (current_page > 1) {
+        current_page--;
+        changePage(current_page);
+    }
+}
+
+function nextPage()
+{
+    if (current_page < numPages()) {
+        current_page++;
+        changePage(current_page);
+    }
+}
+    
+function changePage(page)
+{
+    var btn_next = document.getElementById("btn_next");
+    var btn_prev = document.getElementById("btn_prev");
+    var listing_table = document.getElementById("listingTable");
+    var page_span = document.getElementById("page");
+ 
+    // Validate page
+    if (page < 1) page = 1;
+    if (page > numPages()) page = numPages();
+
+    listing_table.innerHTML = "";
+
+    for (var i = (page-1) * records_per_page; i < (page * records_per_page) && i < objJson.length; i++) {
+        listing_table.innerHTML += objJson[i].title + "<br>";
+    }
+    page_span.innerHTML = page + "/" + numPages();
+
+    if (page == 1) {
+        btn_prev.style.visibility = "hidden";
+    } else {
+        btn_prev.style.visibility = "visible";
+    }
+
+    if (page == numPages()) {
+        btn_next.style.visibility = "hidden";
+    } else {
+        btn_next.style.visibility = "visible";
+    }
+}
+
+function numPages()
+{
+    return Math.ceil(objJson.length / records_per_page);
+}
+
+window.onload = function() {
+    changePage(1);
+};
+
+
+  //]]></script>
+
+  <script>
+    // tell the embed parent frame the height of the content
+    if (window.parent && window.parent.parent){
+      window.parent.parent.postMessage(["resultsFrame", {
+        height: document.body.getBoundingClientRect().height,
+        slug: "Lzp0dw83"
+      }], "*")
+    }
+
+    // always overwrite window.name, in case users try to set it manually
+    window.name = "result"
+  </script>
+
+    <script>
+      let allLines = []
+
+      window.addEventListener("message", (message) => {
+        if (message.data.console){
+          let insert = document.querySelector("#insert")
+          allLines.push(message.data.console.payload)
+          insert.innerHTML = allLines.join(";\r")
+
+          let result = eval.call(null, message.data.console.payload)
+          if (result !== undefined){
+            console.log(result)
+          }
+        }
+      })
+    </script>
+
+<script src="https://static.codepen.io/assets/common/stopExecutionOnTimeout-157cd5b220a5c80d4ff8e0e70ac069bffd87a61252088146915e8726e5d9f147.js"></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/paginationjs/2.1.3/pagination.min.js'></script>
+<script id="rendered-js">
+$(function () {
+  //   (function(name) {
+  //     var container = $('#pagination-' + name);
+  //     var sources = function () {
+  //       var result = [];
+
+  //       for (var i = 1; i < 196; i++) {
+  //         result.push(i);
+  //       }
+
+  //       return result;
+  //     }();
+  // 		console.log(sources)
+
+  //     var options = {
+  //       dataSource: sources,
+  //       callback: function (response, pagination) {
+  //         window.console && console.log(response, pagination);
+
+  //         var dataHtml = '<ul>';
+
+  //         $.each(response, function (index, item) {
+  //           dataHtml += '<li>' + item + '</li>';
+  //         });
+
+  //         dataHtml += '</ul>';
+
+  //         container.prev().html(dataHtml);
+  //       }
+  //     };
+
+  //     //$.pagination(container, options);
+
+  //     container.addHook('beforeInit', function () {
+  //       window.console && console.log('beforeInit...');
+  //     });
+  //     container.pagination(options);
+
+  //     container.addHook('beforePageOnClick', function () {
+  //       window.console && console.log('beforePageOnClick...');
+  //       //return false
+  //     });
+  //   })('demo1');
+
+  (function (name) {
+    var container = $('#pagination-' + name);
+    container.pagination({
+      dataSource: 'https://api.flickr.com/services/feeds/photos_public.gne?tags=cat&tagmode=any&format=json&jsoncallback=?',
+      locator: 'items',
+      totalNumber: 50,
+      pageSize: 2,
+      showPageNumbers: true,
+      showPrevious: true,
+      showNext: true,
+      showNavigator: true,
+      showFirstOnEllipsisShow: true,
+      showLastOnEllipsisShow: true,
+      ajax: {
+        beforeSend: function () {
+          container.prev().html('Loading data from flickr.com ...');
+        } },
+
+      callback: function (response, pagination) {
+        window.console && console.log(22, response, pagination);
+        var dataHtml = '<ul>';
+
+        $.each(response, function (index, item) {
+          dataHtml += '<li>' + item.title + '</li>';
+        });
+
+        dataHtml += '</ul>';
+
+        container.prev().html(dataHtml);
+      } });
+
+  })('demo2');
+});
+//# sourceURL=pen.js
+    </script>
+<section>
+    <h4 class="title">Listing Details:  The Expanse - Leviathan Wakes</h4>
+    <hr>
+</section>
+ <!-- Messages -->
+    <!-- Flash Messages -->
+<div id="alerts" class="container messages">
+    <div class="row justify-content-around">
+        <div id="messages">
+            
+            
+            
+        </div>
+    </div>
+</div>
+<!-- End Flash Messages -->
+    <!-- End Messages -->
+
+<div class="container crd-cont z-depth-2 top-club bottom">
+    <div class="card-img bottom">
+        <img src="https://m.media-amazon.com/images/I/51HgrMkErvL.jpg">
+    </div>  
+
+    <div class="content ">
+    <hr class="bottom">
+        <p > <span class="sml">Added By:</span> Cara</p>
+        <p > <span class="sml">Read Time:</span> 15+ Hours</p>
+        <p> <span class="sml">Added on:</span> 11 June 2020</p>
+        <p > <span class="sml">Rating:</span> 5 Stars</p>
+        <p class="last"> <span class="sml">Description: </span>Humanity has colonised the solar system - Mars, the Moon, the Asteroid Belt and beyond - but the stars are still out of our reach.  Jim Holden is an officer on an ice miner making runs from the rings of Saturn to the mining stations of the Belt. When he and his crew discover a derelict ship called the Scopuli, they suddenly find themselves in possession of a deadly secret. A secret that someone is willing to kill for, and on an unimaginable scale. War is coming to the system, unless Jim can find</p>
+        <div class="">
+         
+        <div class="meet-btn btn-size">
+        <a class="btn waves-effect waves-light standard-btn icon-right btn-spc btn-color spacer" href="/get_update_listing/5edc0d7520beca0b6461e638"><i class="material-icons right">send</i>Edit </a>
+
+        <!-- Modal Trigger -->
+       
+        <a class="btn waves-effect waves-light standard-btn icon-right btn-spc btn-red modal-trigger spacer" href="#modal1">Delete &nbsp;<i class="fa fa-times-circle"></i></a>
+
+         <a class="btn waves-effect waves-light standard-btn icon-right btn-spc home spacer" href="/browse"><i class="material-icons right">send</i>Back </a>
+
+       
+        </div>
+      
+    
+    </div>
+
+</div>
+
+
+
+</div>
+
+<!-- Modal Structure -->
+        <div id="modal1" class="modal s12">
+            <div class="modal-content">
+            <h4>Confirm Deletion</h4>
+            
+                <hr><br>  
+                <!-- Give your meeting a name-->
+                <div class="row">
+                    <form class="col s12"  >
+                        <div class="row">
+                         <p> Please Confirm you wish to delete the selected listing: The Expanse - Leviathan Wakes</p>
+                        <!-- Delete meeting-->
+                            <div class="col s6">
+                                <a class="btn waves-effect waves-light standard-btn icon-right btn-spc btn-red" href="/remove_listing/5edc0d7520beca0b6461e638">Delete Listing&nbsp;<i class="fa fa-times-circle"></i></a>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+                    
+            </div>
+            <div class="modal-footer">
+            <a href="#!" class="modal-close waves-effect waves-green btn-flat">Close</a>
+            </div>
+       </div>  
+
+    
+    </main>
+
+    {% endblock %}

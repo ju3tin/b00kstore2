@@ -1,0 +1,128 @@
+{% extends 'base1final_copy.html' %} 
+{% block content %}
+     <!-- Main Content -->   
+    <main class="container col s12">
+    
+
+
+<section class="myslider">
+    <div class="slider " id="top">
+        <ul class="slides">
+            <li>
+                <img src="https://images.pexels.com/photos/590493/pexels-photo-590493.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="book shop image">
+                <div class="caption center-align white-text">
+                    <h3>Book Shelf</h3>
+                    <h5 class="light text-lighten-3">Your Community Book Shop</h5>
+                </div>
+            </li>
+            <li>
+                <img class="darken" src="https://media.edutopia.org/styles/responsive_2880px_16x9/s3/masters/2018-08/iStock-487922329_master.jpg" alt="book club  image">
+                <div class="caption center-align white-text">
+                    <h3>Book Club</h3>
+                    <h5 class="light text-lighten-3">Join our Book Club</h5>
+                    <br>
+                    <form  action="/book_club">
+                        <button class="btn waves-effect waves-light ind-btn" type="submit" >Meet up and join in the lively discussion! <br> Join or Create a new Book Club Meeting
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </li>
+            <li>
+                <img src="https://images.pexels.com/photos/3769697/pexels-photo-3769697.jpeg?auto=compress&cs=tinysrgb&h=750&w=1260" alt="browse page image">
+                <div class="caption center-align white-text">
+                    <h3>Collection</h3>
+                    <h5 class="light text-lighten-3">Browse our user added collections</h5>
+                    <br>
+                    <form method="POST" action="/browse">
+                        <button class="btn waves-effect waves-light ind-btn" type="submit" >Browse the Listings 
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </li>
+             <li>
+                <img src="https://image.freepik.com/free-photo/girl-holding-book-front-face_23-2147690566.jpg" alt="book club image">
+                <div class="caption center-align white-text">
+                    <h3>Become Part of the Community</h3>
+                    <h5 class="light text-lighten-3">Add your own reviews and book listings</h5>
+                    <br>
+                    <form action="/register">
+                        <button class="btn waves-effect waves-light ind-btn" type="submit" >Register
+                        <i class="material-icons right">send</i>
+                        </button>
+                    </form>
+                </div>
+            </li>
+        </ul>
+    </div>
+</section>
+ <!-- Messages -->
+    <!-- Flash Messages -->
+<div id="alerts" class="container messages">
+    <div class="row justify-content-around">
+        <div id="messages">
+            
+            
+            
+        </div>
+    </div>
+</div>
+<!-- End Flash Messages -->
+    <!-- End Messages -->
+ <button onclick="topFunction()" id="myBtn" title="Go to top"><i class="material-icons  btt center-align">navigation</i></button> 
+<!--<div class="col s12 bottom ">
+    <h4 class="page-title">Hello World</h4>
+   
+</div>
+-->
+
+
+<main>
+
+
+
+<h2>Registration Form</h2>
+<form action="" method="post" role="form">
+    
+<div class="form-group">
+      <label for="name">First Name:</label>
+<input type="text" class="form-control" id="name" name="name" placeholder="What's your first name?">
+<label for="name">Second Name:</label>
+<input type="text" class="form-control" id="surname" name="surname" placeholder="What's your second name?">
+<label for="name">User Name:</label>
+<input type="text" class="form-control" id="username" name="username" placeholder="What's your User name?">
+
+<label for="email">Email:</label>
+<input type="text" class="form-control" id="email" name="email" placeholder="Your email will be used to contact you.">
+
+<label for="password">Password:</label>
+<input type="password" class="form-control" id="password" name="password" placeholder="Enter a password.">
+
+</div>
+<button type="submit" class="btn btn-success">Sign Up</button>
+</form>
+
+
+
+
+
+
+<div class="alert alert-warning">
+                Error: All the form fields are required. </div>
+
+
+
+
+
+</div>
+
+
+
+
+    </main>
+    <!-- End Main Content --> 
+
+
+  
+{% endblock %}

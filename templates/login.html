@@ -1,0 +1,14 @@
+{% extends 'base1final1a.html' %} 
+{% block content %}
+    <form action="" method="post" role="form">
+    {{ form.csrf }}
+<div class="form-group">
+      <label for="name">User Name:</label>
+<input type="text" class="form-control" id="username" name="username" placeholder="What's your Username name?">
+<label for="password">Password:</label>
+<input type="password" class="form-control" id="password" name="password" placeholder="Enter a password.">
+
+</div>
+<button type="submit" class="btn btn-success">Log In</button><br><br>
+</form>
+{% endblock %}

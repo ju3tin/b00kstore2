@@ -1,0 +1,191 @@
+{% extends 'base1final1a.html' %} 
+{% block content %}
+
+
+<!-- Main Content -->   
+
+<!--    
+  <section class="slides top-club">
+       <img class="browse_img responsive-img" src="https://media.edutopia.org/styles/responsive_2880px_16x9/s3/masters/2018-08/iStock-487922329_master.jpg" alt="browse page image" style="width:1280px;height:350px;" />
+  </section>
+  -->
+  
+  
+  
+  
+   <!-- Messages -->
+      <!-- Flash Messages -->
+  <div id="alerts" class="container messages">
+      <div class="row justify-content-around">
+          <div id="messages">
+              
+              
+              
+          </div>
+      </div>
+  </div>
+  <!-- End Flash Messages -->
+      <!-- End Messages -->
+   
+          
+      <h4 class="title">Listing Form</h4>
+      <hr class="bottom">
+
+  
+
+<div class="">
+  <form action="" method="POST" >
+
+  <div class="input-field col s10">
+      <input id="title" name="title" type="text" minlength="1" maxlength="30" placeholder="Title of publication" class="form-control validate" required>
+          <label for="title">
+          Title
+              <i class="far fa-question-circle tooltipped" data-position="right" data-tooltip="1-30 characters" aria-hidden="true"></i>
+          </label>
+  </div>
+
+  <div class="input-field col s10">
+      <input id="author" name="author" type="text" minlength="1" maxlength="30" placeholder="Author of publication" class="form-control validate" required>
+          <label for="author">
+          Author
+              <i class="far fa-question-circle tooltipped" data-position="right" data-tooltip="1-30 characters" aria-hidden="true"></i>
+          </label>
+  </div>
+
+  <div class="input-field col s10">
+    <input id="isbn" name="isbn" type="text" minlength="1" maxlength="30" placeholder="ISBN of publication" class="form-control validate" required>
+        <label for="isbn">
+        ISBN
+            <i class="far fa-question-circle tooltipped" data-position="right" data-tooltip="1-30 characters" aria-hidden="true"></i>
+        </label>
+</div>
+
+  <div class="input-field col s10">
+          <select id="type1" name="type1" class="form-control validate" required>
+              <option value="" disabled selected>Type of item</option>
+              
+              <option value="Book">Book</option>
+              
+              <option value="E-Book">E-Book</option>
+              
+              <option value="Audio-book">Audio-book</option>
+              
+              <option value="Comic">Comic</option>
+              
+              <option value="Document">Document</option>
+              
+              <option value="Blog">Blog</option>
+              
+          </select>
+          <label for="type">Item type</label>
+  </div>
+
+  <div class="input-field col s10">
+          <select id="read_time" name="read_time" class="form-control validate" required>
+              <option value="" disabled selected>Reading time</option>
+              
+              <option value="1 Hour">1 Hour</option>
+              
+              <option value="2 Hours">2 Hours</option>
+              
+              <option value="5 Hours">5 Hours</option>
+              
+              <option value="10 Hours">10 Hours</option>
+              
+              <option value="15+ Hours">15+ Hours</option>
+              
+          </select>
+          <label for="read_time">Reading time</label>
+  </div>
+
+  <div class="input-field col s10">
+          <select id="category" name="category" class="form-control validate" required>
+              <option value="" disabled selected>Genre</option>
+              
+              <option value="Drama">Drama</option>
+              
+              <option value="Biography">Biography</option>
+              
+              <option value="Real Life">Real Life</option>
+              
+              <option value="Crime">Crime</option>
+              
+              <option value="Fiction">Fiction</option>
+              
+              <option value="Non-Fiction">Non-Fiction</option>
+              
+              <option value="Sci-Fiction">Sci-Fiction</option>
+              
+              <option value="Collections">Collections</option>
+              
+          </select>
+          <label for="category">Item Category</label>
+  </div>
+
+  <div class="input-field col s10">
+          <select id="rating" name="rating" class="form-control validate" required>
+              <option value="" disabled selected>Rating</option>
+              
+              <option value="1 Star">1 Star</option>
+              
+              <option value="2 Stars">2 Stars</option>
+              
+              <option value="3 Stars">3 Stars</option>
+              
+              <option value="4 Stars">4 Stars</option>
+              
+              <option value="5 Stars">5 Stars</option>
+              
+          </select>
+          <label for="rating">Item Rating</label>
+  </div>
+
+  <div class="input-field col s10">
+      <input id="comment" name="comment" type="text" minlength="1" maxlength="500" placeholder="Add your comments" class="form-control " required>
+          <label for="comment">
+          Comments
+              <i class="far fa-question-circle tooltipped" data-position="right" data-tooltip="1-500 characters" aria-hidden="true"></i>
+          </label>
+  </div>
+
+  <div class="input-field col s10">
+      <input id="url" name="url" type="text"  placeholder="Add a link to the image" class="form-control " required>
+          <label for="url">
+          Link to image
+              <i class="far fa-question-circle tooltipped" data-position="right" aria-hidden="true"></i>
+          </label>
+  </div>
+
+  <div class="input-field col s10">
+      <input id="purchase" name="purchase" type="text"  placeholder="Add a link to purchase the listing" class="form-control " required>
+          <label for="purchase">
+          Link to Purchase Listing
+              <i class="far fa-question-circle tooltipped" data-position="right" aria-hidden="true"></i>
+          </label>
+  </div>
+
+
+
+      <div class="col s10 top-club">
+          <button class="btn waves-effect waves-light standard-btn icon-right btn-spc btn-color" type="submit" name="add-item" aria-label="Add new item">
+              Add Listing
+              <i class="fas fa-plus-circle" aria-hidden="true"></i>
+          </button>
+          <a class="btn waves-effect waves-light standard-btn icon-right btn-spc btn-red" href="/index" aria-label="Cancel button">
+              Cancel &nbsp;<i class="fa fa-times-circle"></i>
+          </a>
+      </div>
+      </form>
+  </div>
+
+<br>
+  
+  
+  
+  
+  
+    
+      <!-- End Main Content --> 
+
+      {% endblock %}
+  

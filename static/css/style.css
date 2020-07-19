@@ -1,0 +1,563 @@
+/* -- Page styling -- */
+* {
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* -- Materialize styling for features -- */
+ body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  }
+
+main {
+    flex: 1 0 auto;
+  }
+
+
+  /* -- Messages Styling -- */
+
+  @keyframes showMessages{
+  from {
+    top: 0;
+    opacity: 0;
+  }
+  to {
+    top: 55px;
+    opacity: 1;
+  }
+}
+  @keyframes hideMessages{
+ from {
+    top: 55px;
+    opacity: 1;
+  }
+  to {
+    top: 0;
+    opacity: 0;
+  }
+}
+
+
+
+#message {
+    display:none;
+    width: 100%;
+    margin-left:auto;
+    margin-right:auto;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    position: relative;
+    z-index: 500;
+    background-color: #E8C547;
+    color: #fff;
+  }
+
+  #message.show{
+      display: block;
+      animation: showMessages 0.5s, hideMessages 0.5s 3.5s;
+  }
+
+  /* -- Nav -- */
+  .nav-wrapper{
+      background-color:#30323D  ;
+  }
+
+  .mynav{
+      position:relative;
+      z-index: 500;
+  }
+
+  .pad{
+      margin-right:125px;
+  }
+
+  a.brand-logo{
+      margin-left:75px;
+  }
+
+  @media (max-width:992px)
+  {
+      a.brand-logo{
+          margin:0;
+      }
+  }
+
+ 
+
+/* -- Home Page -- */
+.myslider{
+    margin:0;
+    padding:0;
+    margin-top:50px;
+}
+
+.caption{
+    margin-top:35px;
+}
+
+.darken {
+  background-image: 
+    linear-gradient(
+      rgba(0, 0, 0, 0.5),
+      rgba(0, 0, 0, 0.5)
+    );
+}
+
+/* -- Paragraphgs -- */
+.para-text{
+    margin:15px;
+}
+
+.bottom{
+    margin-bottom:35px;
+}
+
+/* -- Browse page -- */
+
+.browse_img{
+    width: 1100px;
+    height: 400px;
+    object-fit: cover;
+}
+
+.browse-header{
+   margin: 0;
+    padding:0;
+}
+@media (min-width:993px){
+.container.browse{
+    width:95%!important;
+}
+}
+
+@media (min-width:993px){
+.container.index{
+    width:95%!important;
+}
+}
+
+/* -- index btns -- */
+.ind-btn{
+    background-color:#e8c547!important;
+    color:#fff!important;
+}
+
+
+/* -- Items -- */
+.item{
+    width:150px;
+    border:2px solid red;
+    padding:2rem;
+
+}
+
+
+/* -- Register Page -- */
+.register-page{
+    margin-left:auto;
+    margin-right:auto;
+}
+
+
+
+/* -- Footer -- */
+.page-footer{
+    bottom:0;
+    background-color:#4D5061!important    ;
+}
+
+ul.social{
+    display:inline-flex;
+}
+
+li.li1{
+    padding-right:8px;
+}
+li.li{
+    padding-left:8px;
+    padding-right:8px;
+}
+li.li4{
+    padding-left:8px;
+}
+
+.fab.fa-linkedin, .fa-github, .fa-youtube, .fa-slack{
+    font-size:35px;
+    color:#fff;
+    transition: transform .4s;
+}
+
+.fab.fa-github:hover{
+    color:rgb(88, 158, 88);
+    transform: scale(1.5);
+}
+.fab.fa-linkedin:hover{
+    color:rgb(74, 134, 202);
+    transform: scale(1.5);
+}
+.fab.fa-youtube:hover{
+    color:rgb(197, 90, 90);
+    transform: scale(1.5);
+}
+.fab.fa-slack:hover{
+    color:rgb(183, 91, 179);
+    transform: scale(1.5);
+}
+
+.foot-spc{
+    padding-left:35px;
+    padding-right:35px;
+}
+
+a.ft-nav{
+    color:#fff!important;
+}
+a.ft-nav:hover{
+    color:#E8C547!important;
+}
+
+@media(min-width:993px){
+  .col.foot-spc{
+      margin-left:43px!important;
+  }
+}
+
+@media(max-width:600px){
+  .col.foot-spc{
+      margin-left:58px!important;
+  }
+  .nav, .soc {
+      margin-top:55px;
+  }
+  .book{
+      margin-left:15px;
+  }
+}
+  .container.footer-spc{
+      width:85%!important;
+  }
+
+  .footer-hr{
+      color:#fff;
+      margin-bottom:15px;
+  }
+
+
+
+/* -- Home page books carosel -- */
+.books-car{
+    margin-bottom:50px;
+}
+
+.card.small{
+    width:200px!important;
+}
+
+.card-space{
+    margin-top:15px;
+}
+.index-card{
+    width:200px!important;
+    height:auto;
+    object-fit: cover;
+}
+
+.card-title{
+    height:75px!important;
+}
+
+.aff-link{
+    color:rgb(39, 59, 239);    
+}
+
+.image-size{
+    object-fit:cover; 
+    overflow:hidden;
+}
+
+
+.title-top{
+    font-size: 1.4rem;
+}
+
+.top{
+    margin-top:15px;
+}
+
+.bg-top{
+    margin-top:35px;
+}
+
+.top-club{
+    margin-top:45px;
+}
+
+.top-crd{
+    margin-top: 35px;
+}
+
+.sml-bottom{
+    margin-bottom:15px;
+}
+
+.bg-bottom{
+    margin-bottom:55px;
+}
+
+
+/* -- Book Club Page -- */
+.meetings-btn{
+    margin-right:35px;
+}
+
+.meet-btn{
+    margin-left:33px;
+    margin-right:33px;
+    margin-top:25px;
+}
+
+.edit-spc{
+    margin-top:15px;
+}
+
+.col-head{
+    background-color:#4D5061;
+    color:white;
+}
+
+.col-col{
+    background-color:#cdd1c4;
+}
+
+.add-meet-btn{
+    background-color:#e8c547!important;
+}
+
+/* -- Edit page -- */
+.edit{
+    border:2px solid #035e7b;
+    
+}
+
+.title-head{
+    background-color:#035e7b; 
+    padding:15px;
+    color:#fff;
+    margin-top:0!important;
+}
+
+.edit-form{
+    padding-left:25px;
+    padding-right:25px;
+}
+
+/* -- Add Listing -- */
+.add{
+    border:2px solid #035e7b;
+    
+}
+
+.add-form{
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:25px;
+    padding-bottom:25px;
+    margin-left:65px!important;
+    
+}
+
+.btn-spc{
+    padding-right:20px!important;
+}
+
+.add-item-page{
+    max-width:1150px;
+    height:350px;
+    object-fit: cover;
+}
+
+.top-list{
+    margin-top:75px;
+}
+
+/* -- Listing Page -- */
+.col-list{
+    max-width:1150px;
+}
+
+.card-listings{
+    margin-left:25px;
+    margin-right:25px;
+    height: 300px;
+}
+
+.large-card{
+    height:700px;
+}
+
+.card-image{
+    width:100%;
+}
+.cards{
+    margin-left:auto;
+    margin-right:auto;
+    margin:.5rem 0 1rem 0;
+    background-color:#fff;
+    transition: box-shadow .25s, -webkit-box-shadow .25s;
+    transition-property: box-shadow, box-shadow;
+    transition-duration: 0.25s, 0.25s;
+    transition-timing-function: ease, ease;
+    transition-delay: 0s, 0s;
+    border-radius:2px;
+}
+
+
+.last{
+    padding-bottom:50px;
+}
+
+.crd-cont{
+    padding:3rem;
+}
+
+.card-img{
+    margin-left:auto;
+    margin-right: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sml{
+    font-weight:normal;
+    font-size:1.2rem;    
+}
+
+
+
+/* -- Breadcrumbs -- */
+.bread{
+    background-color: #035e7b;
+}
+
+.bread-in{
+    padding:15px;
+}
+
+.brd-link{
+    font-size:1.2rem;
+
+}
+
+/* -- Profile -- */
+.profile-img{
+    object-fit:contain;
+}
+
+.top-bg{
+    margin-top:75px;
+}
+
+.left-spc{
+    margin-right:25px;
+}
+
+
+/* -- Back to top button -- */
+#myBtn {
+  display: none; 
+  position: fixed;
+  bottom: 20px; 
+  right: 30px; 
+  z-index: 99; 
+  border: none; 
+  outline: none; 
+  background-color: #035e7b; 
+  color: white; 
+  cursor: pointer;
+  padding: 15px; 
+  border-radius: 50%; 
+  font-size: 18px;
+}
+
+.btt{
+    font-size:35px;
+    color:#E8C547;
+}
+
+#myBtn:hover {
+  background-color: #5c80bc; 
+}
+  /* -- buttons -- */
+  .btn-color{
+      background-color:#035e7b;
+  }
+  .btn-color:hover{
+      background-color:#4e9db8;
+  }
+
+  .home{
+      background-color:#006168;
+  }
+
+  .home:hover{
+      background-color:rgb(27, 163, 173);
+  }
+
+  .login-btn{
+      background-color:#cfac2b;
+  }
+
+  .login-btn:hover{
+      background-color:rgb(236, 190, 20);
+  }
+
+  .btn-red{
+      background-color:rgb(187, 43, 43);
+  }
+
+   .btn-red:hover{
+      background-color:rgb(132, 13, 13);
+  }
+
+  .btn-goto{
+      background-color:#5c80bc;
+  }
+
+   .btn-goto:hover{
+      background-color:#1a53b6;
+  }
+
+  .btn-pur{
+      background-color:#e8c547;
+  }
+
+   .btn-pur:hover{
+      background-color:#e4b50d;
+  }
+
+  .meet-btn{
+      display:flex;
+  }
+
+  .spacer{
+      
+      margin-right:25px;
+  }
+
+@media(max-width:600px){
+    .spacer{
+        margin-top:15px;
+    }
+    .btn-size{
+        display:block;
+    }
+}

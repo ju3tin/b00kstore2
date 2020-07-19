@@ -1,44 +1,37 @@
 #!/usr/local/bin/python3
-from flask import Flask, jsonify
+import pymongo
+import os
+from bson.json_util import dumps
+from bson.objectid import ObjectId
+from flask import Flask, render_template, url_for, flash, redirect, request, abort, session, jsonify, json
+#from flask_wtf import FlaskForm
+#from wtforms import Form, TextField, TextAreaField, validators, StringField, SubmitField, PasswordField
+#from wtforms.validators import DataRequired
+#from forms import RegistrationForm, LoginForm
+#import bcrypt
 
+# App config.
 app = Flask(__name__)
-tasks = []
+app.config.from_object(__name__)
+app.config['SECRET_KEY'] = '7d441f27d441f27567d441f2b6176a'
+
+	
+@app.route("/")
+def index ():
+    todos_l = todos.find()
+    return render_template('base1.html',todos=todos_l)
 
 
-@app.route('/api/tasks', methods=['GET'])
-def get_tasks():
-    task_list = []
-    for task in tasks:
-        task_list.append({'title': task['title'], 'description': task['description'], 'id': task['id']})
-    return jsonify({'tasks': task_list})
+@app.errorhandler(404)
+def page_not_found(error):
+	title="error"
+	return render_template('404.html', error_code='404',t=title), 404
 
-
-@app.route('/api/create-task', methods=['GET'])
-def create_task():
-    new_task = {"id": len(tasks), "title": "Learn Heroku", "description": "Start with Flask ", "done": False}
-    tasks.append(new_task)
-    for task in tasks:
-        task_list.append({'title': task['title'], 'description': task['description'], 'id': task['id']})
-    return jsonify({'tasks': task_list})
-
-
-@app.route('/api/tasks/<int:task_id>', methods=['GET'])
-def get_task(task_id):
-    try:
-        task = tasks[task_id]
-    except:
-        return jsonify({"text": "Error, task not found"})
-    return jsonify({'title': task['title'], 'description': task['description'], 'id': task['id']})
-
-
-@app.route('/', methods=['GET'])
-def home():
-    return jsonify({'msg': 'This is the Home'})
-
-
-@app.route('/test', methods=['GET'])
-def test():
-    return jsonify({'msg': 'This is a Test'})
+@app.errorhandler(500)
+def special_exception_handler(error):
+	title="error 505"
+	return render_template('500.html', error_code='500', t=title), 500
+    
 
 
 if __name__ == '__main__':
