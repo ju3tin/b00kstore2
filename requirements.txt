@@ -92,7 +92,6 @@ soupsieve==1.9.3
 stevedore==3.2.0
 systemd-python==234
 tabulate==0.8.3
-ufw==0.36
 unattended-upgrades==0.1
 urllib3==1.25.3
 virtualenv==20.0.27
